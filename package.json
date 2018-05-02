@@ -1,0 +1,31 @@
+{
+  "name": "nodejs_redis_usermanagement",
+  "version": "1.0.0",
+  "description": "User management app using NodeJS and Redis",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "test this"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpdevspace/NodeJS_Redis_UserManagement.git"
+  },
+  "keywords": [
+    "nodejs",
+    "redis"
+  ],
+  "author": "Jean Paul Giraldo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpdevspace/NodeJS_Redis_UserManagement/issues"
+  },
+  "homepage": "https://github.com/jpdevspace/NodeJS_Redis_UserManagement#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.10",
+    "redis": "^2.8.0"
+  }
+}
