@@ -4,9 +4,16 @@ const path =  require('path');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const redis = require('redis');
+const indexRoute = require('./routes');
 
 // Set port
 const port = 3000;
+
+// Create Redis Client
+const client = redis.createClient();
+
+client.on('error', err => console.log(`Redis Error: ${err}`));
+client.on('connect', () => console.log('Connected to Redis'));
 
 // Init app
 const app = express();
@@ -23,8 +30,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // To do delete requests from a form
 app.use(methodOverride('_method'));
 
-app.get('/', (req, res, next) => {
-  res.render('searchusers');
-})
+// Router
+app.use('/', indexRoute);
+
 
 app.listen(port, () => console.log(`Server started on Port ${port}`));
