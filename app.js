@@ -3,17 +3,11 @@ const exphbs = require('express-handlebars');
 const path =  require('path');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const redis = require('redis');
+
 const indexRoute = require('./routes');
 
 // Set port
 const port = 3000;
-
-// Create Redis Client
-const client = redis.createClient();
-
-client.on('error', err => console.log(`Redis Error: ${err}`));
-client.on('connect', () => console.log('Connected to Redis'));
 
 // Init app
 const app = express();

@@ -1,4 +1,10 @@
 <h1>Search Users</h1>
+{{#if error}}
+  <div class="alert alert-dismissible alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Oh snap!</strong> {{error}}
+  </div>
+{{/if}}
 <form action="/users/search" method="POST" class="form-inline">
   <div class="form-group">
     <input type="text" name="id" class="form-control" placeholder="Search User by ID">
